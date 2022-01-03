@@ -1,0 +1,76 @@
+local module = {}
+
+
+function module:CreateUI()
+	local x2x22 = Instance.new("ScreenGui")
+	local x9KFD72V = Instance.new("Frame")
+	local UICorner = Instance.new("UICorner")
+	local _1I23B2138 = Instance.new("Frame")
+	local UICorner_2 = Instance.new("UICorner")
+	local Frame = Instance.new("Frame")
+	local _89JX82J4 = Instance.new("ScrollingFrame")
+	local UIListLayout = Instance.new("UIListLayout")
+
+	x2x22.Name = game.HttpService:GenerateGUID()
+	x2x22.Parent = game.CoreGui:WaitForChild('RobloxGui')
+	x2x22.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+	x9KFD72V.Name = game.HttpService:GenerateGUID()
+	x9KFD72V.Parent = x2x22
+	x9KFD72V.BackgroundColor3 = Color3.new(0.109804, 0.109804, 0.109804)
+	x9KFD72V.Position = UDim2.new(0.331794202, 0, 0.331288338, 0)
+	x9KFD72V.Size = UDim2.new(0.336411595, 0, 0.336196333, 0)
+
+	UICorner.Parent = x9KFD72V
+
+	_1I23B2138.Name = game.HttpService:GenerateGUID()
+	_1I23B2138.Parent = x9KFD72V
+	_1I23B2138.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
+	_1I23B2138.Position = UDim2.new(0, 0, -0.000828429707, 0)
+	_1I23B2138.Size = UDim2.new(1.00000012, 0, 0.109489053, 0)
+
+	UICorner_2.Parent = _1I23B2138
+
+	Frame.Parent = _1I23B2138
+	Frame.BackgroundColor3 = Color3.new(0.188235, 0.188235, 0.188235)
+	Frame.BorderSizePixel = 0
+	Frame.Position = UDim2.new(0, 0, 0.598198354, 0)
+	Frame.Size = UDim2.new(0.99999994, 0, 0.400000006, 0)
+
+	_89JX82J4.Name = game.HttpService:GenerateGUID()
+	_89JX82J4.Parent = x9KFD72V
+	_89JX82J4.Active = true
+	_89JX82J4.BackgroundColor3 = Color3.new(1, 1, 1)
+	_89JX82J4.BackgroundTransparency = 1
+	_89JX82J4.BorderSizePixel = 0
+	_89JX82J4.Position = UDim2.new(0.0117647061, 0, 0.149635032, 0)
+	_89JX82J4.Size = UDim2.new(0.974509835, 0, 0.828467131, 0)
+	_89JX82J4.ScrollBarThickness = 0
+
+	UIListLayout.Parent = _89JX82J4
+	UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+	UIListLayout.Padding = UDim.new(0, 2)
+	
+	function module:button(text,functionT)
+		local UICorner_3 = Instance.new("UICorner")
+		local TextButton = Instance.new("TextButton")
+		UICorner_3.CornerRadius = UDim.new(0, 4)
+		UICorner_3.Parent = TextButton
+		TextButton.Name = game.HttpService:GenerateGUID()
+		TextButton.Parent = _89JX82J4
+		TextButton.BackgroundColor3 = Color3.new(1, 1, 1)
+		TextButton.Size = UDim2.new(0.997987926, 0, 0.0459159091, 0)
+		TextButton.ZIndex = 2
+		TextButton.Font = Enum.Font.GothamBlack
+		TextButton.Text = text
+		TextButton.TextColor3 = Color3.new(0, 0, 0)
+		TextButton.TextSize = 14 
+		UICorner_3.CornerRadius = UDim.new(0, 4)
+		UICorner_3.Parent = TextButton
+		TextButton.MouseButton1Click:Connect(
+			function()
+				functionT(TextButton)
+			end
+		)
+	end
+end
